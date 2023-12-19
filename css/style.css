@@ -1,20 +1,30 @@
 /********** Template CSS **********/
 :root {
-  --primary: #00B87B;
+  --white: #ffff;
   --secondary: #314355;
-  --light: #F2F2F2;
-  --dark: #2C3E50;
+  --light: #f2f2f2;
+  --dark: #2c3e50;
+  --blue: #314355;
+  --light-gray: #d0d5dd;
+  --light-blue: #d0f0ff;
+  --light-dark: #1782BF;
+
+}
+
+body {
+  color: #314355;
+  background-color: #f3faff !important;
 }
 
 #spinner {
   opacity: 0;
   visibility: hidden;
-  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
   z-index: 99999;
 }
 
 #spinner.show {
-  transition: opacity .5s ease-out, visibility 0s linear 0s;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0s;
   visibility: visible;
   opacity: 1;
 }
@@ -36,6 +46,7 @@
 .btn-square {
   width: 40px;
   height: 40px;
+  border-radius: 10px;
 }
 
 .btn-sm-square {
@@ -58,7 +69,9 @@
 }
 
 .btn.btn-primary {
-  color: #FFFFFF;
+  color: var(--white);
+  background-color: var(--light-dark);
+  border-color: var(--light-dark);
 }
 
 .typed-cursor {
@@ -81,7 +94,7 @@
 }
 
 .back-to-top i {
-  color: var(--primary);
+  color: var(--light-dark);
 }
 
 .back-to-top i:hover {
@@ -124,7 +137,7 @@
   height: 10px;
   bottom: -4px;
   left: 0;
-  border: 2px solid var(--light);
+  border: 2px solid var(--blue);
   border-radius: 10px;
 }
 
@@ -136,7 +149,7 @@
   bottom: 0;
   left: 15px;
   border-radius: 2px;
-  background: var(--light);
+  background: var(--blue);
 }
 
 .progress {
@@ -151,7 +164,8 @@
 .service-item {
   padding: 30px;
   text-align: center;
-  background: var(--secondary);
+  background: var(--light-blue);
+  border-radius: 15px;
 }
 
 .service-item i {
@@ -161,12 +175,13 @@
   align-items: center;
   justify-content: center;
   background: var(--light);
-  color: var(--primary);
-  transition: .5s;
+  color: var(--light-dark);
+  transition: 0.5s;
+  border-radius: 15px;
 }
 
 .service-item:hover i {
-  background: var(--primary);
+  background: var(--light-dark);
   color: var(--light);
 }
 
@@ -177,9 +192,9 @@
   top: 50%;
   left: 50%;
   font-size: 90px;
-  background: rgba(44, 62, 80, .9);
+  background: rgba(44, 62, 80, 0.9);
   opacity: 0;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .portfolio-item:hover .portfolio-btn {
@@ -192,8 +207,8 @@
 
 .portfolio-item i {
   opacity: 0;
-  transition: .3s;
-  transition-delay: .3s;
+  transition: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .portfolio-item:hover i {
@@ -210,11 +225,11 @@
   margin: 0 5px;
   width: 15px;
   height: 15px;
-  background: var(--light);
+  background: var(--blue);
 }
 
 .testimonial-carousel .owl-dot.active {
-  background: var(--primary);
+  background: var(--light-dark);
 }
 
 .reflect-text {
@@ -238,5 +253,92 @@
 
 .textarea-data {
   height: 200px !important;
+}
 
+.bg-green {
+  background-color: var(--light-blue) !important;
+  border-radius: 15px;
+  color: var(--light-dark);
+}
+
+.border-light {
+  border-color: var(--blue) !important;
+}
+
+.text-light-pro {
+  color: var(--blue) !important;
+}
+
+.btn-down {
+  color: var(--blue) !important;
+}
+
+.form-input {
+  color: var(--light) !important;
+}
+
+.border-space {
+  width: 100%;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px var(--light-gray) solid;
+}
+
+.shadow {
+  margin-top: 120px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset !important;
+}
+
+.border-space-green {
+  width: 100%;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.container-text {
+  width: 50%;
+  height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: var(--light-blue);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px #E8F6FD solid;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 10px;
+}
+
+.icon-download {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.fa-download {
+  width: 14.17px;
+  height: 16.67px;
+  left: 3.33px;
+  top: 1.67px;
+  position: absolute;
+  color: var(--light-dark);
+}
+
+.text-data {
+  color: var(--light-dark);
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 600;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.text-primary-set {
+  color: var(--light-dark);
 }
