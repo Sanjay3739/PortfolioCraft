@@ -32,6 +32,10 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Email Link-->
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </head>
 
 <body>
@@ -43,7 +47,6 @@
         </div>
     </div>
     <!-- Spinner End -->
-
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-4 sticky-lg-top vh-100 ">
@@ -62,7 +65,7 @@
                                 title="a"></i></a>
                         <a class="btn btn-secondary btn-square mx-1" href="#"><i class="fab fa-linkedin-in"
                                 title="a"></i></a>
-                        <a class="btn btn-secondary btn-square mx-1" href="#"><i class="fab fa-instagram"
+                        <a class="btn btn-secondary btn-square mx-1" href="https://www.instagram.com/sanjay_makwana_25"><i class="fab fa-instagram"
                                 title="a"></i></a>
                     </div>
                     <div class="d-flex align-items-end justify-content-between border-top">
@@ -70,10 +73,12 @@
                             <div class="icon-download">
                                 <i class="fas fa-download "></i>
                             </div>
-                            <div class="text-data">Download CV</div>
+                            <button class="text-data" onclick="printContent()">Download CV</button>
+
                         </div>
                         <div class="container-text  border-end btn-down">
-                            <div class="text-data btn-scroll">Contact Me</div>
+                            <button onclick="scrollToSection('#contact')" class="text-data btn-scroll">Contact
+                                Me</button>
                         </div>
                     </div>
                 </div>
@@ -96,11 +101,14 @@
                         </div>
                     </div>
                     <h1 class="title pb-3 mb-5">About Me</h1>
-                    <p class="p-text"> I'm a full-stack developer skilled in HTML, CSS, SCSS, Laravel, PHP, React.js,
+                    <p class="p-text"> I'm a full-stack developer skilled in HTML, CSS, SCSS, Laravel,
+                        PHP, React.js,
                         Vue.js, MySQL,
                         MongoDB, and AWS. On the frontend, I create intuitive interfaces using HTML, CSS, and SCSS.
-                        Leveraging Laravel and PHP, I build secure backends, manage databases, and develop RESTful APIs.
-                        With React.js and Vue.js, I craft dynamic user experiences, and AWS ensures reliable deployment.
+                        Leveraging Laravel and PHP, I build secure backends, manage databases, and develop RESTful
+                        APIs.
+                        With React.js and Vue.js, I craft dynamic user experiences, and AWS ensures reliable
+                        deployment.
                         My focus is on delivering innovative web solutions aligned with business goals."</p>
                     <div class="row mb-4">
                         <div class="col-sm-6 py-1">
@@ -503,25 +511,25 @@
                     <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form
                         with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're
                         done. <a href="" class="text-primary-set">Download Now</a></p>
-                    <form>
+                    <form id="contactForm">
                         <div class="row g-3 form-input">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-secondary" id="name"
+                                    <input type="text" class="form-control border-0 bg-secondary" id="name" name="name"
                                         placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control border-0 bg-secondary" id="email"
+                                    <input type="email" class="form-control border-0 bg-secondary" id="email" name="email"
                                         placeholder="Your Email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-0 bg-secondary" id="subject"
+                                    <input type="text" class="form-control border-0 bg-secondary" id="subject" name="subject"
                                         placeholder="Subject">
                                     <label for="subject">Subject</label>
                                 </div>
@@ -529,7 +537,7 @@
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea class="form-control border-0 bg-secondary textarea-data"
-                                        placeholder="Leave a message here" id="message"></textarea>
+                                        placeholder="Leave a message here" id="message" name="message"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
@@ -593,6 +601,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/print.js"></script>
+    <script src="js/email.js"></script>
 </body>
 
 </html>

@@ -129,7 +129,10 @@ body {
 .title {
   position: relative;
 }
-
+..title-print {
+  position: relative;
+  margin-bottom: 10px;
+}
 .title::before {
   position: absolute;
   content: "";
@@ -337,6 +340,8 @@ body {
   font-weight: 600;
   line-height: 20px;
   word-wrap: break-word;
+  border: none;
+  background-color: var(--light-blue);
 }
 
 .text-primary-set {
@@ -605,4 +610,16 @@ body {
   .content-data {
     display: none;
   }
+}
+
+a:hover{
+  color: var(--light-blue) !important;
+}
+
+.border-print{
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 16px;
+  margin-top: 10px;
+  border: 2px var(--light-gray) solid;
 }
