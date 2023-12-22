@@ -15,6 +15,7 @@
         emailjs.send('SB_1234','template_shm4336', formData)
             .then(function (response) {
                 alert('Message sent successfully!');
+                document.getElementById('contactForm').reset();
             }, function (error) {
                 console.error('Error sending email:', error);
                 alert('There was an error sending the message.');
